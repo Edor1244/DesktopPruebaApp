@@ -31,7 +31,7 @@ namespace DesktopPruebaApp.DataBaseConfig
         public void Close()
         {
             MySql.Data.MySqlClient.MySqlConnection conn;
-            string myConnectionString = "server=127.0.0.1;uid=root;" + "database=iroxIT";
+            string myConnectionString = "server={PONERNOMBRESERVIDOR};uid=root;" + "database=iroxIT";
             conn = new MySql.Data.MySqlClient.MySqlConnection(myConnectionString);
             conn.Close();
         }
@@ -84,7 +84,7 @@ namespace DesktopPruebaApp.DataBaseConfig
                                                "GROUP BY p.Titulo " +
                                                "ORDER BY TotalVentas DESC;";
                 case "cantidadDeProductosExistentes":
-                    return "SELECT COUNT(IDProductos) as TotalProductos FROM Productos;";
+                    return "SELECT Titulo FROM Productos;";
                 case "ventas":
                     return $"select * from Ventas";
             }
